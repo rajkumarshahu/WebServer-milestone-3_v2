@@ -23,7 +23,7 @@ exports.register = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Login user
-// @route   POST /login
+// @route   POST /auth/login
 // @access  Public
 exports.login = asyncHandler(async (req, res, next) => {
 	const { email, password } = req.body;
@@ -52,7 +52,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 });
 
 // @desc      Log user out / clear cookie
-// @route     GET /api/v1/auth/logout
+// @route     GET /auth/logout
 // @access    Public
 exports.logout = asyncHandler(async (req, res, next) => {
 	res.cookie('token', 'none', {
