@@ -22,7 +22,7 @@ exports.getPatients = async (req, res, next) => {
 //@access      Public
 exports.getPatient = async (req, res, next) => {
 	try {
-		const patient = await Patient.findById(req.params.id);
+		const patient = await Patient.findById(req.params.id).populate('records');
 		if (!patient) {
 			return res.status(400).json({ success: false });
 		}
