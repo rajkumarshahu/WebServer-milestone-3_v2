@@ -13,20 +13,22 @@ const recordRouter = require('./records')
 
 const router = express.Router();
 
+const { protect, authorize } = require('../middleware/auth');
+
 // Re-route into other resource routers
 router.use('/:patientId/records', recordRouter);
 
-router.route('/:id/photo').put(patientPhotoUpload);
+router.route('/:id/photo').put(protect, authorize('doctor', 'admin'), patientPhotoUpload);
 
 router
     .route('/')
     .get(getPatients)
-    .post(createpatient)
+    .post(protect, authorize('doctor', 'admin'), createpatient)
 
 router
     .route('/:id')
     .get(getPatient)
-    .put(updatePatient)
-    .delete(deletePatient);
+    .put(protect, authorize('doctor', 'admin'), updatePatient)
+    .delete(protect, authorize('doctor', 'admin'), deletePatient);
 
 module.exports = router;
