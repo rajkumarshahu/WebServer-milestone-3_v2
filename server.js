@@ -3,6 +3,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const colors = require('colors');
 const fileupload = require('express-fileupload');
+const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 
@@ -15,7 +16,7 @@ connectDB();
 // Route files
 const patients = require('./routes/patients');
 const records = require('./routes/records');
-const Patient = require('./models/Patient');
+const auth = require('./routes/auth');
 
 const app = express();
 
@@ -39,6 +40,9 @@ app.use(function (req, res, next) {
 // Body parser
 app.use(express.json());
 
+// Cookie parser
+app.use(cookieParser());
+
 // @desc    Logs request to console
 const logger = (req, res, next) => {
 	console.log(
@@ -58,6 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Mount routers
 app.use('/patients', patients);
 app.use('/records', records);
+app.use('/auth', auth);
 
 app.use(errorHandler);
 
