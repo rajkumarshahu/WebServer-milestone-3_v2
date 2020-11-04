@@ -1,0 +1,52 @@
+[
+    {
+        "_id": "5d725a037b292f5f8cefff99",
+        "bodyTemperature": 37,
+        "pulseRate": 67,
+        "respirationRate": 18,
+		"systolicBP": 100,
+        "diastolicBP": 140,
+        "o2Sat": 92,
+        "patient": "5d725a037b292f5f8ceff707"
+    },
+    {
+        "_id": "5d713995b721c3bb38b2f345",
+        "bodyTemperature": 38,
+        "pulseRate": 79,
+        "respirationRate": 22,
+		"systolicBP": 120,
+        "diastolicBP": 128,
+        "o2Sat": 90,
+        "patient": "5d725a037b292f5f8ceff787"
+    },
+    {
+        "_id": "5d713995b721c3bb38b2f359",
+        "bodyTemperature": 36,
+        "pulseRate": 88,
+        "respirationRate": 24,
+		"systolicBP": 98,
+        "diastolicBP": 150,
+        "o2Sat": 92,
+        "patient": "5d713a66ec8f2b88b8f830b8"
+    },
+    {
+        "_id": "5d713995b721c3bb38b2f129",
+        "bodyTemperature": 34,
+        "pulseRate": 89,
+        "respirationRate": 16,
+		"systolicBP": 80,
+        "diastolicBP": 120,
+        "o2Sat": 88,
+        "patient": "5d713995b721c3bb38c1f5d0"
+    },
+    {
+        "_id": "5d713995b721c3bb38b2f233",
+        "bodyTemperature": 34,
+        "pulseRate": 89,
+        "respirationRate": 16,
+		"systolicBP": 80,
+        "diastolicBP": 120,
+        "o2Sat": 88,
+        "patient": "5d713995b721c3bb38c1f5d9"
+    }
+]
