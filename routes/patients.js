@@ -4,7 +4,8 @@ const {
 	getPatient,
 	createpatient,
 	updatePatient,
-	deletePatient,
+    deletePatient,
+    patientPhotoUpload
 } = require('../controllers/patients');
 
 // Include records resource routers
@@ -14,6 +15,8 @@ const router = express.Router();
 
 // Re-route into other resource routers
 router.use('/:patientId/records', recordRouter);
+
+router.route('/:id/photo').put(patientPhotoUpload);
 
 router
     .route('/')
