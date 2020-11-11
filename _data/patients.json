@@ -3,50 +3,60 @@
         "_id": "5d725a037b292f5f8ceff707",
         "name": "John Doe",
         "age": 67,
+        "photo": "https://api-wecare.herokuapp.com/uploads/johndoe.jpg",
         "phone": "(111) 111-1111",
 		"email": "johndoe@gmail.com",
         "address": "233 Bay Street Toronto Ontario M4Y 1GX",
         "diagnosis": "Aortic Aneurysm",
-        "description": "Needs attention!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, odo consequat."
+        "description": "Needs attention!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, odo consequat.",
+        "isCritical": true
     },
     {
         "_id": "5d725a037b292f5f8ceff787",
         "name": "Jane Smith",
         "age": 57,
+        "photo": "https://api-wecare.herokuapp.com/uploads/jane-smith.jpg",
         "phone": "(222) 222-2222",
 		"email": "janesmith@gmail.com",
         "address": "240 Bloor St Toronto Ontario M4Y 1GX",
         "diagnosis": "Arthritis",
-        "description": "Severe joint pain !!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "description": "Severe joint pain !!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "isCritical": false
     },
     {
         "_id": "5d713a66ec8f2b88b8f830b8",
         "name": "Olli Hamptonh",
         "age": 44,
+        "photo": "https://api-wecare.herokuapp.com/uploads/olli-hamp.jpg",
         "phone": "(333) 333-3333",
 		"email": "ollihampton@gmail.com",
         "address": "250 Wellesley Street East Toronto Ontario M4Y 1GX",
         "diagnosis": "Venous thromboembolism (VTE)",
-        "description": "Clots developed in the lower leg!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "description": "Clots developed in the lower leg!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "isCritical": false
     },
     {
         "_id": "5d713995b721c3bb38c1f5d0",
         "name": "Emre Hamilton",
         "age": 74,
+        "photo": "https://api-wecare.herokuapp.com/uploads/emre.jpg",
         "phone": "(444) 444-4444",
 		"email": "emre@gmail.com",
         "address": "2 Grosvenor Street Toronto Ontario M4Y 1GX",
         "diagnosis": "Alzheimer's Disease",
-        "description": "Mild memory loss!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "description": "Mild memory loss!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "isCritical": false
     },
     {
         "_id": "5d713995b721c3bb38c1f5d9",
         "name": "Laurie Hook",
         "age": 39,
+        "photo": "https://api-wecare.herokuapp.com/uploads/laurie.jpg",
         "phone": "(555) 555-5555",
 		"email": "laurie@gmail.com",
         "address": "350 Parliament Street Toronto Ontario M4Y 1GX",
         "diagnosis": "E.coli infection",
-        "description": "Severe stomach cramps, diarrhea (often bloody), and vomiting.!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "description": "Severe stomach cramps, diarrhea (often bloody), and vomiting.!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "isCritical": false
     }
 ]
