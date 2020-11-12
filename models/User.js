@@ -26,7 +26,7 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minlength: 6,
-		select: false,
+		select: false, // this way will not return the password when we use API to get the user
 	},
 	resetPasswordToken: String,
 	resetPasswordExpire: Date,
@@ -41,11 +41,11 @@ UserSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
 		next();
     }
-	const salt = await bcrypt.genSalt(10);
-	this.password = await bcrypt.hash(this.password, salt); // hash the password
+	const salt = await bcrypt.genSalt(10); // Generate salt
+	this.password = await bcrypt.hash(this.password, salt); // Hash the password with the salt
 });
 
-// Sign JWT and return
+// Sign JWT which gets stored in local storage and return
 UserSchema.methods.getSignedJwtToken = function () {
 	return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
 		expiresIn: process.env.JWT_EXPIRE,

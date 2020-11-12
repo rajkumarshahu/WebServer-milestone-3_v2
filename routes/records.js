@@ -10,6 +10,7 @@ const {
 
 const router = express.Router({ mergeParams: true });
 
+// Protect and authorize middlewares
 const { protect, authorize } = require('../middleware/auth');
 
 router

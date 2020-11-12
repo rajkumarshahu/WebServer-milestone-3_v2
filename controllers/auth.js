@@ -8,6 +8,7 @@ const User = require('../models/User');
 // @route   POST auth/register
 // @access  Public
 exports.register = asyncHandler(async (req, res, next) => {
+	// Sending data on the body
 	const { name, email, password, role } = req.body;
 
 	// Create user
@@ -53,10 +54,12 @@ exports.login = asyncHandler(async (req, res, next) => {
 
 // @desc      Log user out / clear cookie
 // @route     GET /auth/logout
-// @access    Public
+// @access    Private
 exports.logout = asyncHandler(async (req, res, next) => {
+	// take the cookie and set it to none
 	res.cookie('token', 'none', {
-	  expires: new Date(Date.now() + 10 * 1000),
+		// expires in 5 seconds
+	  expires: new Date(Date.now() + 5 * 1000),
 	  httpOnly: true,
 	});
 

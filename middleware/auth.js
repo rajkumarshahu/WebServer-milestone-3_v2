@@ -12,12 +12,14 @@ exports.protect = asyncHandler(async (req, res, next) => {
 		req.headers.authorization &&
 		req.headers.authorization.startsWith('Bearer')
 	) {
-		// Set token from Bearer token in header
+		// Exclude the Bearer part and just extract the token and Set token from Bearer token in header
 		token = req.headers.authorization.split(' ')[1];
+
 		// Set token from cookie
-	} else if (req.cookies.token) {
-		token = req.cookies.token;
 	}
+	// else if (req.cookies.token) {
+	// 	token = req.cookies.token;
+	// }
 
 	// Make sure token exists
 	if (!token) {
@@ -28,7 +30,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
 		// Verify token
 		const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-		console.log(decoded);
+		// console.log(decoded);
 
 		req.user = await User.findById(decoded.id);
 
@@ -45,7 +47,7 @@ exports.authorize = (...roles) => {
 			return next(
 				new ErrorResponse(
 					`User role ${req.user.role} is not authorize to access this route`,
-					403
+					403  // Forbidden error
 				)
 			);
 		}

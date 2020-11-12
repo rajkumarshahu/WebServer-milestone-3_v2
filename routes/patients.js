@@ -13,6 +13,7 @@ const recordRouter = require('./records')
 
 const router = express.Router();
 
+// Protect and authorize middlewares
 const { protect, authorize } = require('../middleware/auth');
 
 // Re-route into other resource routers
