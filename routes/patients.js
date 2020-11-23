@@ -1,3 +1,63 @@
+// /**
+//  * @swagger
+//  * tags:
+//  *     description: "Fetch all patients from database"
+//  * /patients:
+//  *   get:
+//  *      summary: Get All Patients
+//  *      tags:
+//  *          - Patients
+//  *      description: Fetch all patients from database
+//  *      parameters:
+//  *        - name: Authorization
+//  *          in: header
+//  *          required: false
+//  *          default: 'Bearer {token}'
+//  *          type: string
+//  *      produces:
+//  *        - application/json
+//  *      responses:
+//  *       200:
+//  *         description: Return a list with count (total patients)
+//  */
+
+// /**
+//  * @swagger
+//  * /patients:
+//  *   post:
+//  *      summary: Create New Patient
+//  *      tags:
+//  *          - Patients
+//  *      operationId: CreateNewPatient
+//  *      deprecated: false
+//  *      produces:
+//  *          - application/json
+//  *      consumes:
+//  *          - application/json
+//  *      parameters:
+//  *          - name: Authorization
+//  *            in: header
+//  *            required: false
+//  *            default: 'Bearer {token}'
+//  *            type: string
+//  *          - name: Content-Type
+//  *            in: header
+//  *            required: true
+//  *            type: string
+//  *            description: JSON Type
+//  *          - name: Body
+//  *            in: body
+//  *            required: true
+//  *            description: ''
+//  *            schema:
+//  *              $ref: '#/definitions/CreateNewPatientRequest'
+//  *      responses:
+//  *          '200':
+//  *          description: ''
+//  *          headers: {}
+//  */
+
+
 const express = require('express');
 const {
 	getPatients,

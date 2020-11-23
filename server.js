@@ -6,6 +6,10 @@ const fileupload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerOptions = require("./config/swaggerConfig");
+const swaggerSpec = swaggerJsDoc(swaggerOptions);
 
 // Load env variables
 dotenv.config({ path: './config/config.env' });
@@ -36,6 +40,14 @@ app.use(function (req, res, next) {
 	}
 	next();
 });
+
+// /* call for swagger and other router */
+// app.get('/swagger.json', (req, res) => {
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(swaggerSpec);
+// });
+
+// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 // Body parser
 app.use(express.json());

@@ -1,0 +1,796 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Patient Data REST API",
+    "description": "Backend REST API for WeCare application to manage patients and patients' record",
+    "contact": {}
+  },
+  "host": "wecare-api-supriya-raj.herokuapp.com",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/patients": {
+      "get": {
+        "description": "Fetch all patients from database",
+        "summary": "Get All Patients",
+        "tags": [
+          "Patients"
+        ],
+        "operationId": "GetAllPatients",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "Add new patient to database",
+        "summary": "Create New Patient",
+        "tags": [
+          "Patients"
+        ],
+        "operationId": "CreateNewPatient",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateNewPatientRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/patients/5d725a037b292f5f8ceff707": {
+      "get": {
+        "description": "Get single patient by id",
+        "summary": "Get Single Patient",
+        "tags": [
+          "Patients"
+        ],
+        "operationId": "GetSinglePatient",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "Updates patient and database",
+        "summary": "Update Patient",
+        "tags": [
+          "Patients"
+        ],
+        "operationId": "UpdatePatient",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdatePatientRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/patients/5fb6c6d047583b3b2f964b95": {
+      "delete": {
+        "description": "Deletes patients from database",
+        "summary": "Delete Patient",
+        "tags": [
+          "Patients"
+        ],
+        "operationId": "DeletePatient",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/patients/5d725a037b292f5f8ceff707/photo": {
+      "put": {
+        "description": "Route of upload a patient photo",
+        "summary": "Upload Patient Photo",
+        "tags": [
+          "Patients"
+        ],
+        "operationId": "UploadPatientPhoto",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/records": {
+      "get": {
+        "description": "Get all records in database",
+        "summary": "Get All Records",
+        "tags": [
+          "Records"
+        ],
+        "operationId": "GetAllRecords",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/patients/5d725a037b292f5f8ceff707/records": {
+      "get": {
+        "description": "Get specific record for a patient",
+        "summary": "Get Records for Patient",
+        "tags": [
+          "Records"
+        ],
+        "operationId": "GetRecordsforPatient",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "Create record for a specific patient",
+        "summary": "Create Patient Record",
+        "tags": [
+          "Records"
+        ],
+        "operationId": "CreatePatientRecord",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreatePatientRecordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/records/5d725a037b292f5f8cefff99": {
+      "get": {
+        "description": "Get single record by id",
+        "summary": "Get Single Record",
+        "tags": [
+          "Records"
+        ],
+        "operationId": "GetSingleRecord",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes patient's record",
+        "summary": "Delete A Record",
+        "tags": [
+          "Records"
+        ],
+        "operationId": "DeleteARecord",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/records/5d713995b721c3bb38b2f345": {
+      "put": {
+        "description": "Updates record",
+        "summary": "Update a Record",
+        "tags": [
+          "Records"
+        ],
+        "operationId": "UpdateaRecord",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateaRecordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "description": "Add user to database with encrypted password",
+        "summary": "Register User",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "RegisterUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegisterUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Login User",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "LoginUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "summary": "Get Logged in User via Token",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "GetLoggedinUserviaToken",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JSON Type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "description": "Clear token cookie",
+        "summary": "Logout  User",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "LogoutUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateNewPatientRequest": {
+      "title": "CreateNewPatientRequest",
+      "example": {
+        "name": "Test74 name",
+        "age": 40,
+        "phone": "(555) 555-5555",
+        "email": "test74@gmail.com",
+        "address": "350 Parliament Street Toronto Ontario M4Y 1GX",
+        "diagnosis": "E.coli infection",
+        "description": "Severe stomach cramps, diarrhea (often bloody), and vomiting.!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "diagnosis": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "age",
+        "phone",
+        "email",
+        "address",
+        "diagnosis",
+        "description"
+      ]
+    },
+    "UpdatePatientRequest": {
+      "title": "UpdatePatientRequest",
+      "example": {
+        "address": "240 Wellesley Street East Toronto Ontario M4Y 1GX"
+      },
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address"
+      ]
+    },
+    "CreatePatientRecordRequest": {
+      "title": "CreatePatientRecordRequest",
+      "example": {
+        "bodyTemperature": 37,
+        "pulseRate": 67,
+        "respirationRate": 18,
+        "systolicBP": 100,
+        "diastolicBP": 140,
+        "o2Sat": 92
+      },
+      "type": "object",
+      "properties": {
+        "bodyTemperature": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pulseRate": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "respirationRate": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "systolicBP": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "diastolicBP": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "o2Sat": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "bodyTemperature",
+        "pulseRate",
+        "respirationRate",
+        "systolicBP",
+        "diastolicBP",
+        "o2Sat"
+      ]
+    },
+    "UpdateaRecordRequest": {
+      "title": "UpdateaRecordRequest",
+      "example": {
+        "bodyTemperature": 37,
+        "pulseRate": 72
+      },
+      "type": "object",
+      "properties": {
+        "bodyTemperature": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pulseRate": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "bodyTemperature",
+        "pulseRate"
+      ]
+    },
+    "RegisterUserRequest": {
+      "title": "RegisterUserRequest",
+      "example": {
+        "name": "Test Name",
+        "email": "test@gmail.com",
+        "password": "123456",
+        "role": "doctor"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "password",
+        "role"
+      ]
+    },
+    "LoginUserRequest": {
+      "title": "LoginUserRequest",
+      "example": {
+        "email": "raj@gmail.com",
+        "password": "123456"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Patients"
+    },
+    {
+      "name": "Records",
+      "description": "Create, read, update and delete records"
+    },
+    {
+      "name": "Authentication",
+      "description": "Routes for user authentication including register, login, reset password...."
+    }
+  ]
+}
