@@ -88,6 +88,7 @@ const server = app.listen(
 	)
 );
 
+module.exports = server
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
 	console.log(`Error: ${err.message}`.red);

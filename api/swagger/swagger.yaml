@@ -6,8 +6,9 @@ info:
     Backend REST API for WeCare application to manage patients and patients'
     record
   contact: {
-    
+
   }
+
 host: wecare-api-supriya-raj.herokuapp.com
 basePath: '/'
 securityDefinitions: {}

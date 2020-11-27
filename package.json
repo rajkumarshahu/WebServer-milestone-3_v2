@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node server",
     "dev": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 10000"
   },
   "author": "Raj Kumar Shahu <rajkumarshahu@gmail.com>",
   "license": "MIT",
@@ -23,6 +23,11 @@
     "swagger-ui-express": "^4.1.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.5"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.5",
+    "superagent": "^6.1.0",
+    "supertest": "^6.0.1"
   }
 }
